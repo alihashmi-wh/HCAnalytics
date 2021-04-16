@@ -13,6 +13,9 @@ library(gt)
 library(tidyverse)
 library(glue)
 
+encounters %>%
+  mutate(start_date = as.Date(substr(START, 1, 10), format = "%Y-%m-%d"))
+
 # Define the start and end dates for the data range
 start_date <- "2010-06-07"
 end_date <- "2010-06-14"
